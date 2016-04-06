@@ -1,0 +1,73 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="row" ng-controller="userCntrl">
+
+	<div class="col-md-2">
+
+	</div>
+	<div class="col-md-7">
+		<div class="row">
+			<h1>{{name}}</h1>
+		</div>
+		<hr>
+		<div class="row">
+			<form>
+				<table width="800px">
+
+					<tr>
+						<th><button type="button" class="btn btn-primary btn-md form-control">Week number</button></th>
+						<th><button type="button" class="btn btn-primary btn-md form-control">Monday</button></th>
+						<th><button type="button" class="btn btn-primary btn-md form-control">Tuesday</button></th>
+						<th><button type="button" class="btn btn-primary btn-md form-control">Wednesday</button></th>
+						<th><button type="button" class="btn btn-primary btn-md form-control">Thursday</button></th>
+						<th><button type="button" class="btn btn-primary btn-md form-control">Friday</button></th>
+						<th><button type="button" class="btn btn-primary btn-md form-control">Saturday</button></th>
+						<th><button type="button" class="btn btn-primary btn-md form-control">Sunday</button></th>
+						<th><button type="button" class=" btn btn-primary btn-md form-control">Total Hours</button></th>
+					</tr>
+					<tr>
+						<td><input ng-model = "timesheet.week1date" type="week" id="num_week1" class=" btn btn-primary btn-md form-control" name="" /></td>
+						<td><input ng-model="timesheet.m1" type="number" id="m1" class="form-control" name="" min=1 max="24" /></td>
+						<td><input ng-model="timesheet.t1" type="number" id="t1" class="form-control" name="" min=1 max="24"/></td>
+						<td><input ng-model="timesheet.w1" type="number" id="w1"  class="form-control" name="" min=1 max="24"/></td>
+						<td><input ng-model="timesheet.r1" type="number" id="r1" class="form-control" name="" min=1 max="24"/></td>
+						<td><input ng-model="timesheet.f1" type="number" id="f1" class="form-control" name="" min=1 max="24"/></td>
+						<td><input ng-model="timesheet.s1" type="number" id="f1" class="form-control" name="" min=1 max="24"/></td>
+						<td><input ng-model="timesheet.ss1" type="number" id="f1" class="form-control" name="" min=1 max="24"/></td>
+						<td><input disabled class="form-control" value={{timesheet.m1+timesheet.t1+timesheet.w1+timesheet.r1+timesheet.f1+timesheet.s1+timesheet.ss1}} /></td>
+					</tr>
+				</table>
+				<hr>
+			</form>
+		</div>
+
+		<br>
+		<div class="row"><span class="inline"><input type="file" class="btn btn-primary" file-model="myFile"></input><br>
+		<input type="button" class="btn btn-default" onclick="this.disabled = true" ng-click="uploadFile()" value="Upload"></input></span>
+
+		</div>
+		<br>
+		<div class="row">
+				<button type="submit" class="btn btn-primary" ng-click="submit()">Submit</button>
+		</div>
+		<hr>
+		<div class="row" ng-init="action1=false">
+	 	<div ng-show="action1" class="alert alert-success" role="alert">
+            <h2>&nbsp;{{action}}</h2>
+            
+    	</div>
+		</div>
+		<div class="row" ng-init="action2=false">
+	 	<div ng-show="action2" class="alert alert-danger" role="alert">
+            <h2>&nbsp;{{error}}</h2>
+            
+    	</div>
+		</div>
+	
+	</div>
+
+</div>
